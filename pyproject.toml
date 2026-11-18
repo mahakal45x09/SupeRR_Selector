@@ -1,0 +1,13 @@
+[project]
+name = "superr-selector"
+version = "2.1.0"
+description = "Rajasthan Royals SupeRR Selector — Match Leverage & Reliability Analytics Engine"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.100.0",
+    "uvicorn>=0.22.0",
+]
+
+[tool.vercel]
+entrypoint = "backend.main:app"

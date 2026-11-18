@@ -7,9 +7,19 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-OUTPUT_DIR = os.path.join(BASE_DIR, "output")
-FRONTEND_DIR = os.path.join(BASE_DIR, "frontend")
-BACKEND_DIR = os.path.join(BASE_DIR, "backend")
+
+def resolve_path(rel_path: str) -> str:
+    """Resolve file path across local and serverless Vercel environments."""
+    for base in [BASE_DIR, os.getcwd(), os.path.dirname(os.path.abspath(__file__))]:
+        candidate = os.path.abspath(os.path.join(base, rel_path))
+        if os.path.exists(candidate):
+            return candidate
+    return os.path.abspath(os.path.join(BASE_DIR, rel_path))
+
+OUTPUT_DIR = resolve_path("output")
+FRONTEND_DIR = resolve_path("frontend")
+BACKEND_DIR = resolve_path("backend")
+DASHBOARD_DIR = resolve_path("dashboard")
 
 app = FastAPI(
     title="SupeRR Selector — Rajasthan Royals Pressure Analytics API",
@@ -27,10 +37,10 @@ app.add_middleware(
 )
 
 # Load in-memory datasets on startup
-with open(os.path.join(OUTPUT_DIR, "dashboard_data.json"), "r", encoding="utf-8") as f:
+with open(resolve_path(os.path.join("output", "dashboard_data.json")), "r", encoding="utf-8") as f:
     dashboard_data = json.load(f)
 
-with open(os.path.join(BACKEND_DIR, "player_details.json"), "r", encoding="utf-8") as f:
+with open(resolve_path(os.path.join("backend", "player_details.json")), "r", encoding="utf-8") as f:
     player_details = json.load(f)
 
 batters_list = dashboard_data["batters"]
@@ -389,9 +399,20 @@ def get_methodology():
 if os.path.exists(FRONTEND_DIR):
     app.mount("/static", StaticFiles(directory=FRONTEND_DIR), name="static")
 
-    @app.get("/")
-    def serve_index():
-        return FileResponse(os.path.join(FRONTEND_DIR, "index.html"))
+@app.get("/")
+@app.get("/index.html")
+def serve_index():
+    index_file = resolve_path(os.path.join("frontend", "index.html"))
+    if not os.path.exists(index_file):
+        index_file = resolve_path(os.path.join("dashboard", "index.html"))
+    return FileResponse(index_file)
+
+@app.get("/dashboard")
+def serve_dashboard():
+    dashboard_file = resolve_path(os.path.join("dashboard", "index.html"))
+    if not os.path.exists(dashboard_file):
+        dashboard_file = resolve_path(os.path.join("frontend", "index.html"))
+    return FileResponse(dashboard_file)
 
 if __name__ == "__main__":
     import uvicorn
