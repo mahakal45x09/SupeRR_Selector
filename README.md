@@ -9,16 +9,23 @@
 
 <br/>
 
+[![Live Production Demo](https://img.shields.io/badge/Live%20Demo-Vercel%20Production-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://supe-rr-selector-two.vercel.app?_vercel_share=bxZwLUc1tSPI1MG77qe2L7WMbSaXMUjY)
+[![Swagger API](https://img.shields.io/badge/Swagger%20API-Live%20Interactive-0284c7?style=for-the-badge&logo=swagger&logoColor=white)](https://supe-rr-selector-two.vercel.app/docs)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.100%2B-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
 [![XGBoost](https://img.shields.io/badge/XGBoost-3.0%2B-EB5424?style=for-the-badge&logo=xgboost&logoColor=white)](https://xgboost.readthedocs.io/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4%2B-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Chart.js](https://img.shields.io/badge/Chart.js-4.4%2B-FF6384?style=for-the-badge&logo=chart.js&logoColor=white)](https://www.chartjs.org/)
-[![License MIT](https://img.shields.io/badge/License-MIT-blueviolet?style=for-the-badge)](LICENSE)
+
+<br/>
+<br/>
+
+### 🌐 **[👉 Click Here to Launch Live Web Application ↗](https://supe-rr-selector-two.vercel.app?_vercel_share=bxZwLUc1tSPI1MG77qe2L7WMbSaXMUjY)**
 
 <br/>
 
-**[ 🚀 Quickstart Guide ](#-quickstart-guide)** &nbsp;•&nbsp;
+**[ 🌐 Live Cloud Demo ](https://supe-rr-selector-two.vercel.app?_vercel_share=bxZwLUc1tSPI1MG77qe2L7WMbSaXMUjY)** &nbsp;•&nbsp;
+**[ 🚀 Quickstart Guide ](#-quickstart--deployment-guide)** &nbsp;•&nbsp;
 **[ 🏛️ System Architecture ](#-system-architecture)** &nbsp;•&nbsp;
 **[ 🏏 Official Top 10 Batters ](#-official-top-10-batters-under-pressure)** &nbsp;•&nbsp;
 **[ 🎯 Official Top 10 Bowlers ](#-official-top-10-bowlers-under-pressure)** &nbsp;•&nbsp;
@@ -59,19 +66,30 @@ Developed for the **Rajasthan Royals SupeRR Selector Season 2 (Round 1)** challe
 
 ---
 
-## 🚀 Quickstart Guide
+## 🚀 Quickstart & Deployment Guide
 
-### 1. Prerequisites & Installation
+### 🌐 Live Cloud Application (Hosted on Vercel)
+
+The complete platform is live and verified in production on Vercel:
+- 🚀 **Live Production Web App**: [https://supe-rr-selector-two.vercel.app](https://supe-rr-selector-two.vercel.app?_vercel_share=bxZwLUc1tSPI1MG77qe2L7WMbSaXMUjY)
+- 🔗 **Direct Share Link**: [https://supe-rr-selector-two.vercel.app?_vercel_share=bxZwLUc1tSPI1MG77qe2L7WMbSaXMUjY](https://supe-rr-selector-two.vercel.app?_vercel_share=bxZwLUc1tSPI1MG77qe2L7WMbSaXMUjY)
+- 📚 **Live Swagger Interactive API Docs**: [https://supe-rr-selector-two.vercel.app/docs](https://supe-rr-selector-two.vercel.app/docs)
+- 📖 **Live Redoc API Specification**: [https://supe-rr-selector-two.vercel.app/redoc](https://supe-rr-selector-two.vercel.app/redoc)
+- 🩺 **Live Health Check Endpoint**: [https://supe-rr-selector-two.vercel.app/api/health](https://supe-rr-selector-two.vercel.app/api/health)
+
+### 💻 Local Development Setup
+
+#### 1. Prerequisites & Installation
 
 Clone the repository and install dependencies in Python 3.10+:
 
 ```bash
-git clone https://github.com/YourOrg/SupeRR_Selectors.git
-cd SupeRR_Selectors
+git clone https://github.com/mahakal45x09/SupeRR_Selector.git
+cd SupeRR_Selector
 pip install -r requirements.txt
 ```
 
-### 2. Launch the Full-Stack Web Platform
+#### 2. Launch Local Full-Stack Web Platform
 
 Run the unified server launcher:
 
@@ -79,10 +97,10 @@ Run the unified server launcher:
 python start_server.py
 ```
 
-Access the interactive portals:
-- 🌐 **Web Dashboard UI**: [`http://127.0.0.1:8000`](http://127.0.0.1:8000)
-- 📚 **Interactive Swagger API Docs**: [`http://127.0.0.1:8000/docs`](http://127.0.0.1:8000/docs)
-- 📖 **Redoc Alternative API Specs**: [`http://127.0.0.1:8000/redoc`](http://127.0.0.1:8000/redoc)
+Access the local development portals:
+- 🌐 **Local Web Dashboard**: [`http://127.0.0.1:8000`](http://127.0.0.1:8000)
+- 📚 **Local Swagger API Docs**: [`http://127.0.0.1:8000/docs`](http://127.0.0.1:8000/docs)
+- 📖 **Local Redoc Specs**: [`http://127.0.0.1:8000/redoc`](http://127.0.0.1:8000/redoc)
 
 <details>
 <summary><b>🛠️ Click to expand Command-Line Pipeline & Build Commands</b></summary>
@@ -111,6 +129,9 @@ python src/generate_pdf_report.py
 
 ```
 B:\SupeRR_Selectors\
+├── api\                                     # Serverless Export Entrypoint for Vercel
+│   └── index.py                             # Vercel serverless function router
+│
 ├── backend\                                 # High-Performance FastAPI Backend
 │   ├── main.py                              # 17 REST API endpoints & static router
 │   ├── models\                              # Trained XGBoost Machine Learning JSON Artifacts
@@ -146,6 +167,7 @@ B:\SupeRR_Selectors\
 │   ├── Top_10_Bowlers_Under_Pressure.csv    # Official Bowler Rankings CSV
 │   └── dashboard_data.json                  # Multi-format data payload
 │
+├── pyproject.toml                           # Vercel deployment entrypoint configuration
 └── reports\                                 # Documentation & Submission Artifacts
     ├── logo.png                             # Official Rajasthan Royals SupeRR emblem
     ├── Methodology_Report.md                # 10-Section Comprehensive Technical Report
@@ -302,23 +324,27 @@ $$\text{Pressure Rating} = 50.0 + 15.0 \cdot Z(\text{Composite Score})$$
 
 The FastAPI backend serves 17 optimized endpoints:
 
-| Endpoint | Method | Description |
-| :--- | :---: | :--- |
-| `/api/overview` | `GET` | Dataset telemetry (deliveries, matches, formats, sample counts) |
-| `/api/top-batters` | `GET` | Top 10 batters under pressure with full baseline comparisons |
-| `/api/top-bowlers` | `GET` | Top 10 bowlers under pressure with containment & strike rates |
-| `/api/all-batters` | `GET` | Paginated search of all 128 qualified batters under pressure |
-| `/api/all-bowlers` | `GET` | Paginated search of all 162 qualified bowlers under pressure |
-| `/api/format-rankings/{fmt}` | `GET` | Format-filtered rankings (`T20`, `T20I`, or `Combined`) |
-| `/api/clutch-lineup` | `GET` | Rajasthan Royals Clutch XI tactical squad composition |
-| `/api/ml/predict-batter` | `POST` | Model 1 inference: Predicted runs, boundaries & strike rate |
-| `/api/ml/predict-bowler` | `POST` | Model 2 inference: Runs conceded, dot probability & wicket risk |
-| `/api/methodology` | `GET` | Mathematical definitions, Bayesian shrinkage parameters & rules |
+| Endpoint | Method | Description | Live Cloud Endpoint |
+| :--- | :---: | :--- | :--- |
+| `/api/overview` | `GET` | Dataset telemetry (deliveries, matches, formats, sample counts) | [Test Live ↗](https://supe-rr-selector-two.vercel.app/api/overview) |
+| `/api/health` | `GET` | Health check & verified record counts | [Test Live ↗](https://supe-rr-selector-two.vercel.app/api/health) |
+| `/api/top-batters` | `GET` | Top 10 batters under pressure with full baseline comparisons | [Test Live ↗](https://supe-rr-selector-two.vercel.app/api/top-batters) |
+| `/api/top-bowlers` | `GET` | Top 10 bowlers under pressure with containment & strike rates | [Test Live ↗](https://supe-rr-selector-two.vercel.app/api/top-bowlers) |
+| `/api/all-batters` | `GET` | Paginated search of all 128 qualified batters under pressure | [Test Live ↗](https://supe-rr-selector-two.vercel.app/api/all-batters) |
+| `/api/all-bowlers` | `GET` | Paginated search of all 162 qualified bowlers under pressure | [Test Live ↗](https://supe-rr-selector-two.vercel.app/api/all-bowlers) |
+| `/api/format-rankings/{fmt}` | `GET` | Format-filtered rankings (`T20`, `T20I`, or `Combined`) | [Test Live ↗](https://supe-rr-selector-two.vercel.app/api/format-rankings/T20) |
+| `/api/clutch-lineup` | `GET` | Rajasthan Royals Clutch XI tactical squad composition | [Test Live ↗](https://supe-rr-selector-two.vercel.app/api/clutch-lineup) |
+| `/api/ml/predict-batter` | `POST` | Model 1 inference: Predicted runs, boundaries & strike rate | Live in Web UI / Swagger |
+| `/api/ml/predict-bowler` | `POST` | Model 2 inference: Runs conceded, dot probability & wicket risk | Live in Web UI / Swagger |
+| `/api/methodology` | `GET` | Mathematical definitions, Bayesian shrinkage parameters & rules | [Test Live ↗](https://supe-rr-selector-two.vercel.app/api/methodology) |
 
 ---
 
 ## 📄 Verified Submission Deliverables
 
+- 🚀 **Live Production Cloud Application**: [https://supe-rr-selector-two.vercel.app](https://supe-rr-selector-two.vercel.app?_vercel_share=bxZwLUc1tSPI1MG77qe2L7WMbSaXMUjY)
+- 🔗 **Direct Share Link**: [https://supe-rr-selector-two.vercel.app?_vercel_share=bxZwLUc1tSPI1MG77qe2L7WMbSaXMUjY](https://supe-rr-selector-two.vercel.app?_vercel_share=bxZwLUc1tSPI1MG77qe2L7WMbSaXMUjY)
+- 📚 **Live Swagger REST API Docs**: [https://supe-rr-selector-two.vercel.app/docs](https://supe-rr-selector-two.vercel.app/docs)
 - 📘 **Technical Methodology Report**: [`reports/Methodology_Report.md`](file:///B:/SupeRR_Selectors/reports/Methodology_Report.md)
 - 📕 **Official Executive Submission PDF**: [`reports/Rajasthan_Royals_SupeRR_Selector_Submission_Report.pdf`](file:///B:/SupeRR_Selectors/reports/Rajasthan_Royals_SupeRR_Selector_Submission_Report.pdf)
 - 📊 **Official Batters CSV**: [`output/Top_10_Batters_Under_Pressure.csv`](file:///B:/SupeRR_Selectors/output/Top_10_Batters_Under_Pressure.csv)
